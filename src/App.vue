@@ -10,6 +10,10 @@
 import { onMounted, ref } from "vue";
 import socket from "./socket/socket.service";
 
+onMounted(() => {
+  socket.setupSocketConnection();
+});
+
 const messages = ref([]);
 const input = ref("");
 

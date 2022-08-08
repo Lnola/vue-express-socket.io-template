@@ -1,5 +1,9 @@
 # Template code for a Vue - Express - Socket.io project
 
+### Intent
+
+This template was created with the intention of displaying the most useful features of the socket.io and making it easier to use in the future (by showing and explaining the most common necessities)
+
 ### Content
 
 It contains the backend and frontend template along with the connections. It is constructed as a monorepo but everything should be easily swapped, extracted...

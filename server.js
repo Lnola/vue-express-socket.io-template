@@ -19,11 +19,16 @@ io.use((socket, next) => {
 });
 
 // basic communication documentation -> https://socket.io/docs/v4/server-socket-instance/
-io.on("connection", (socket, next) => {
-  console.log("A user connected!");
+io.on("connection", (socket) => {
+  socket.join("room"); // room documentation -> https://socket.io/docs/v4/rooms/
+  io.to("room").emit("message", "A user connected!");
 
   socket.on("disconnect", () => {
-    console.log("A user disconnected!");
+    io.to("room").emit("message", "A user disconnected!");
+  });
+
+  socket.on("message", (message) => {
+    io.to("room").emit("message", message);
   });
 });
 
